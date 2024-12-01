@@ -16,14 +16,20 @@
     if (self = [super initWithFrame:frame]) {
 
         _inputFileNameLabel = [[UILabel alloc] init];
+        _inputFileNameLabel.textAlignment = NSTextAlignmentCenter;
 
         UIButtonConfiguration *buttonConfig = [UIButtonConfiguration plainButtonConfiguration];
         buttonConfig.title = @"Run";
         _button = [UIButton buttonWithConfiguration:buttonConfig primaryAction:nil];
 
-        UIStackView *stackView = [[UIStackView alloc] initWithArrangedSubviews:@[_inputFileNameLabel, _button]];
+        _resultLabel = [[UILabel alloc] init];
+        _resultLabel.textAlignment = NSTextAlignmentCenter;
+        _resultLabel.numberOfLines = 0;
+
+        UIStackView *stackView = [[UIStackView alloc] initWithArrangedSubviews:@[_inputFileNameLabel, _button, _resultLabel]];
         stackView.translatesAutoresizingMaskIntoConstraints = NO;
         stackView.axis = UILayoutConstraintAxisVertical;
+        stackView.spacing = 10;
 
         self.backgroundColor = [UIColor systemBackgroundColor];
 
