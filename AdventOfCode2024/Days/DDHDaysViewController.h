@@ -7,8 +7,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface DDHDaysViewController : UIViewController
+@class DDHDay;
 
+@protocol DDHDaysViewControllerProtocol <NSObject>
+- (void)viewController:(UIViewController *)viewController didSelectDay:(DDHDay *)day;
+@end
+
+@interface DDHDaysViewController : UIViewController
+- (instancetype)initWithDelegate:(id<DDHDaysViewControllerProtocol>)delegate;
 @end
 
 NS_ASSUME_NONNULL_END
