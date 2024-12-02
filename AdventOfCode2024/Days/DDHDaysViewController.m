@@ -49,7 +49,7 @@
     _dataSource = [[UITableViewDiffableDataSource alloc] initWithTableView:self.tableView cellProvider:^UITableViewCell * _Nullable(UITableView * _Nonnull tableView, NSIndexPath * _Nonnull indexPath, NSNumber *  _Nonnull itemIdentifier) {
         DDHDayCell *cell = [tableView dequeueReusableCellWithIdentifier:[DDHDayCell identifier]];
         NSUInteger index = [self.days indexOfObjectPassingTest:^BOOL(DDHDay * _Nonnull day, NSUInteger idx, BOOL * _Nonnull stop) {
-            return day.dayNumber = [itemIdentifier integerValue];
+            return day.dayNumber == [itemIdentifier integerValue];
         }];
         DDHDay *day = self.days[index];
         [cell updateWithDay:day];
@@ -58,6 +58,7 @@
 
     [self updateWithDays:@[
         [[DDHDay alloc] initWithDayNumber:1 inputDataFileName:@"day_1"],
+        [[DDHDay alloc] initWithDayNumber:2 inputDataFileName:@"day_2"],
     ]];
 }
 
@@ -79,7 +80,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSNumber *itemIdentifier = [self.dataSource itemIdentifierForIndexPath:indexPath];
     NSUInteger index = [self.days indexOfObjectPassingTest:^BOOL(DDHDay * _Nonnull day, NSUInteger idx, BOOL * _Nonnull stop) {
-        return day.dayNumber = [itemIdentifier integerValue];
+        return day.dayNumber == [itemIdentifier integerValue];
     }];
     DDHDay *day = self.days[index];
     [self.delegate viewController:self didSelectDay:day];
