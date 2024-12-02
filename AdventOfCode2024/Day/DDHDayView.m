@@ -3,14 +3,14 @@
 //
 
 
-#import "DDHDayOneView.h"
+#import "DDHDayView.h"
 #import "DDHDay.h"
 
-@interface DDHDayOneView ()
+@interface DDHDayView ()
 @property (nonatomic, strong) UILabel *inputFileNameLabel;
 @end
 
-@implementation DDHDayOneView
+@implementation DDHDayView
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {

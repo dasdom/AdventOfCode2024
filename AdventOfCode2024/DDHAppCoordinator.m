@@ -6,7 +6,7 @@
 #import "DDHAppCoordinator.h"
 #import <UIKit/UIKit.h>
 #import "DDHDaysViewController.h"
-#import "DDHDayOneViewController.h"
+#import "DDHDayViewController.h"
 
 @interface DDHAppCoordinator () <DDHDaysViewControllerProtocol>
 @property (nonatomic, strong) UINavigationController *navigationController;
@@ -29,7 +29,7 @@
 
 // MARK: - DDHDaysViewControllerDelegate
 - (void)viewController:(UIViewController *)viewController didSelectDay:(DDHDay *)day {
-    DDHDayOneViewController *next = [[DDHDayOneViewController alloc] initWithDay:day];
+    DDHDayViewController *next = [[DDHDayViewController alloc] initWithDay:day];
     [self.navigationController pushViewController:next animated:YES];
 }
 

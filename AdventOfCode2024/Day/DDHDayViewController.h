@@ -9,7 +9,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class DDHDay;
 
-@interface DDHDayOneViewController : UIViewController
+@interface DDHDayViewController : UIViewController
 - (instancetype)initWithDay:(DDHDay *)day;
 @end
 

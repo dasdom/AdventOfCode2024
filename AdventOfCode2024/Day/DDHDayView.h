@@ -9,7 +9,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class DDHDay;
 
-@interface DDHDayOneView : UIView
+@interface DDHDayView : UIView
 @property (nonatomic, strong) UIButton *button;
 @property (nonatomic, strong) UILabel *resultLabel;
 - (void)updateWithDay:(DDHDay *)day;

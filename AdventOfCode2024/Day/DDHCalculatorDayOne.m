@@ -1,49 +1,12 @@
-//  Created by Dominik Hauser on 01.12.24.
+//  Created by Dominik Hauser on 02.12.24.
 //  
 //
 
 
-#import "DDHDayOneViewController.h"
-#import "DDHDay.h"
-#import "DDHDayOneView.h"
+#import "DDHCalculatorDayOne.h"
 
-@interface DDHDayOneViewController ()
-@property (nonatomic, strong) DDHDay *day;
-@property (nonatomic, weak) DDHDayOneView *contentView;
-@end
-
-@implementation DDHDayOneViewController
-
-- (instancetype)initWithDay:(DDHDay *)day {
-    if (self = [super initWithNibName:nil bundle:nil]) {
-        _day = day;
-    }
-    return self;
-}
-
-- (DDHDayOneView *)contentView {
-    return (DDHDayOneView *)self.view;
-}
-
-- (void)loadView {
-    self.view = [[DDHDayOneView alloc] init];
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-
-    [self.contentView.button addTarget:self action:@selector(run:) forControlEvents:UIControlEventTouchUpInside];
-
-    [self.contentView updateWithDay:self.day];
-}
-
-// MARK: - Actions
-- (void)run:(UIButton *)sender {
-    NSURL *fileURL = [[NSBundle mainBundle] URLForResource:self.day.inputDataFileName withExtension:@"txt"];
-    NSData *data = [[NSData alloc] initWithContentsOfURL:fileURL];
-    NSString *fileContent = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    NSArray<NSString *> *lines = [fileContent componentsSeparatedByString:@"\n"];
-
+@implementation DDHCalculatorDayOne
+- (NSArray<NSString *> *)answerFromLines:(NSArray<NSString *> *)lines {
     NSMutableArray<NSNumber *> *firstList = [[NSMutableArray alloc] initWithCapacity:lines.count];
     NSMutableArray<NSNumber *> *secondList = [[NSMutableArray alloc] initWithCapacity:lines.count];
 
@@ -71,7 +34,7 @@
     NSInteger sumOne = [self answerOneFromListOne:[firstList copy] listTwo:[secondList copy]];
     NSInteger sumTwo = [self answerTwoFromListOne:[firstList copy] listTwo:[secondList copy]];
 
-    self.contentView.resultLabel.text = [NSString stringWithFormat:@"Answer 1: %ld\nAnswer 2: %ld", sumOne, sumTwo];
+    return @[[NSString stringWithFormat:@"%ld", sumOne], [NSString stringWithFormat:@"%ld", sumTwo]];
 }
 
 - (NSInteger)answerOneFromListOne:(NSArray<NSString *> *)listOne listTwo:(NSArray<NSString *> *)listTwo {
@@ -98,5 +61,4 @@
     }
     return sum;
 }
-
 @end
