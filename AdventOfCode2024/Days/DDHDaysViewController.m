@@ -57,8 +57,9 @@
     }];
 
     [self updateWithDays:@[
-        [[DDHDay alloc] initWithDayNumber:1 inputDataFileName:@"day_1"],
-        [[DDHDay alloc] initWithDayNumber:2 inputDataFileName:@"day_2"],
+        [[DDHDay alloc] initWithDayNumber:1 inputDataFileName:@"day_01"],
+        [[DDHDay alloc] initWithDayNumber:2 inputDataFileName:@"day_02"],
+        [[DDHDay alloc] initWithDayNumber:3 inputDataFileName:@"day_03"],
     ]];
 }
 

@@ -20,7 +20,7 @@
 }
 
 - (void)updateWithDay:(DDHDay *)day {
-    self.textLabel.text = [NSString stringWithFormat:@"%ld", day.dayNumber];
+    self.textLabel.text = [NSString stringWithFormat:@"Day %ld", day.dayNumber];
 }
 
 @end

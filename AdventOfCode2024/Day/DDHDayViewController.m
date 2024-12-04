@@ -33,6 +33,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.title = [NSString stringWithFormat:@"Day %ld", self.day.dayNumber];
+
     [self.contentView.button addTarget:self action:@selector(run:) forControlEvents:UIControlEventTouchUpInside];
 
     [self.contentView updateWithDay:self.day];

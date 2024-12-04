@@ -6,6 +6,7 @@
 #import "DDHCalculatorFactory.h"
 #import "DDHCalculatorDayOne.h"
 #import "DDHCalculatorDayTwo.h"
+#import "DDHCalculatorDayThree.h"
 
 @implementation DDHCalculatorFactory
 + (id<DDHCalculatorProtocol>)calculatorForDayNumber:(NSInteger)dayNumber {
@@ -17,6 +18,8 @@
         case 2:
             calculator = [[DDHCalculatorDayTwo alloc] init];
             break;
+        case 3:
+            calculator = [[DDHCalculatorDayThree alloc] init];
         default:
             break;
     }
