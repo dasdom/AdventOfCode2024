@@ -60,6 +60,7 @@
         [[DDHDay alloc] initWithDayNumber:1 inputDataFileName:@"day_01"],
         [[DDHDay alloc] initWithDayNumber:2 inputDataFileName:@"day_02"],
         [[DDHDay alloc] initWithDayNumber:3 inputDataFileName:@"day_03"],
+        [[DDHDay alloc] initWithDayNumber:4 inputDataFileName:@"day_04"],
     ]];
 }
 

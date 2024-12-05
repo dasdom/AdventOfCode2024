@@ -75,33 +75,4 @@
         return currentValue;
     }
 }
-
-//- (NSInteger)sumForString:(NSString *)input countingAll:(BOOL)countingAll {
-//    NSInteger sum = 0;
-//    NSScanner *scanner = [[NSScanner alloc] initWithString:input];
-//    [scanner scanUpToString:@"mul(" intoString:NULL];
-//    BOOL enabled = YES;
-//    while ([scanner scanString:@"mul(" intoString:NULL]) {
-//
-//        NSInteger firstFactor;
-//        NSInteger secondFactor;
-//        if ([scanner scanInteger:&firstFactor] &&
-//            [scanner scanString:@"," intoString:NULL] &&
-//            [scanner scanInteger:&secondFactor] &&
-//            [scanner scanString:@")" intoString:NULL]) {
-//            if (enabled || countingAll) {
-//                sum += firstFactor * secondFactor;
-//            }
-//        }
-//
-//        NSString *instructionString;
-//        [scanner scanUpToString:@"mul(" intoString:&instructionString];
-//        if ([instructionString containsString:@"don't()"]) {
-//            enabled = NO;
-//        } else if ([instructionString containsString:@"do()"]) {
-//            enabled = YES;
-//        }
-//    }
-//    return sum;
-//}
 @end
