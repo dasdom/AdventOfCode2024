@@ -23,6 +23,12 @@
             calculator = [[DDHCalculatorDayThree alloc] init];
         case 4:
             calculator = [[DDHCalculatorDay04 alloc] init];
+            break;;
+        case 5: {
+            NSString *className = [NSString stringWithFormat:@"DDHCalculatorDay0%ld", dayNumber];
+            calculator = [[NSClassFromString(className) alloc] init];
+            break;
+        }
         default:
             break;
     }

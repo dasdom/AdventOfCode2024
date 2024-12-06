@@ -10,7 +10,7 @@
 @end
 
 @implementation DDHCalculatorDayThree
-- (NSArray<NSString *> *)answerFromLines:(NSArray<NSString *> *)lines {
+- (NSArray<NSNumber *> *)answerFromLines:(NSArray<NSString *> *)lines {
     NSInteger sumWithIgnoringDisables = 0;
     NSInteger sum = 0;
     _numberFormatter = [[NSNumberFormatter alloc] init];
@@ -47,8 +47,7 @@
             enabled = [self enableFromString:instructionString currentValue:enabled];
         }
     }
-    return @[[NSString stringWithFormat:@"%ld", sumWithIgnoringDisables],
-             [NSString stringWithFormat:@"%ld", sum]];
+    return @[@(sumWithIgnoringDisables), @(sum)];
 }
 
 - (BOOL)enableFromString:(NSString *)string currentValue:(BOOL)currentValue {

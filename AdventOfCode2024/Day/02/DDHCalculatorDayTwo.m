@@ -16,7 +16,7 @@ typedef NS_ENUM(NSUInteger, DDHReportType) {
 };
 
 @implementation DDHCalculatorDayTwo
-- (NSArray<NSString *> *)answerFromLines:(NSArray<NSString *> *)lines {
+- (NSArray<NSNumber *> *)answerFromLines:(NSArray<NSString *> *)lines {
 
     NSInteger numberOfSafeReportsWithoutDamping = 0;
     NSInteger numberOfSafeReportsWithDamping = 0;
@@ -42,7 +42,7 @@ typedef NS_ENUM(NSUInteger, DDHReportType) {
 //        NSLog(@"numberOfSafeReports: %ld", numberOfSafeReports);
     }
 
-    return @[[NSString stringWithFormat:@"%ld", numberOfSafeReportsWithoutDamping], [NSString stringWithFormat:@"%ld", numberOfSafeReportsWithDamping]];
+    return @[@(numberOfSafeReportsWithoutDamping), @(numberOfSafeReportsWithDamping)];
 }
 
 - (DDHReportType)reportTypeForReport:(NSArray<NSString *> *)report withDamping:(BOOL)withDamping {

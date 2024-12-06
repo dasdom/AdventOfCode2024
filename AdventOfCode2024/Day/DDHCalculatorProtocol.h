@@ -9,7 +9,7 @@
 @class NSString;
 
 @protocol DDHCalculatorProtocol <NSObject>
-- (NSArray<NSString *> *)answerFromLines:(NSArray<NSString *> *)lines;
+- (NSArray<NSNumber *> *)answerFromLines:(NSArray<NSString *> *)lines;
 @end
 
 #endif /* DDHCalculatorProtocol_h */

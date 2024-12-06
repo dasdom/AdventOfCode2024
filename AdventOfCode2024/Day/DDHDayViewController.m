@@ -49,7 +49,7 @@
     
     id<DDHCalculatorProtocol> calculator = [DDHCalculatorFactory calculatorForDayNumber:self.day.dayNumber];
 
-    NSArray<NSString *> *results = [calculator answerFromLines:lines];
+    NSArray<NSNumber *> *results = [calculator answerFromLines:lines];
 
     self.contentView.resultLabel.text = [NSString stringWithFormat:@"Answer 1: %@\nAnswer 2: %@", results.firstObject, results.lastObject];
 }

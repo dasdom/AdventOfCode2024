@@ -7,14 +7,14 @@
 #import <UIKit/UIKit.h>
 
 @implementation DDHCalculatorDay04
-- (NSArray<NSString *> *)answerFromLines:(NSArray<NSString *> *)lines {
+- (NSArray<NSNumber *> *)answerFromLines:(NSArray<NSString *> *)lines {
 
-    NSString *answerOne = [self answerOneFromLines:lines];
-    NSString *answerTwo = [self answerTwoFromLines:lines];
+    NSNumber *answerOne = [self answerOneFromLines:lines];
+    NSNumber *answerTwo = [self answerTwoFromLines:lines];
     return @[answerOne, answerTwo];
 }
 
-- (NSString *)answerOneFromLines:(NSArray<NSString *> *)lines {
+- (NSNumber *)answerOneFromLines:(NSArray<NSString *> *)lines {
     NSMutableArray<NSArray<NSString *> *> *grid = [[NSMutableArray alloc] init];
 
     NSMutableArray<NSValue *> *positionsOfX = [[NSMutableArray alloc] init];
@@ -162,10 +162,10 @@
             }
         }
     }
-    return [NSString stringWithFormat:@"%ld", numberOfXMAS];
+    return @(numberOfXMAS);
 }
 
-- (NSString *)answerTwoFromLines:(NSArray<NSString *> *)lines {
+- (NSNumber *)answerTwoFromLines:(NSArray<NSString *> *)lines {
     NSMutableArray<NSArray<NSString *> *> *grid = [[NSMutableArray alloc] init];
 
     NSMutableArray<NSValue *> *positionsOfA = [[NSMutableArray alloc] init];
@@ -211,7 +211,7 @@
             }
         }
     }
-    return [NSString stringWithFormat:@"%ld", numberOfXMAS];
+    return @(numberOfXMAS);
 }
 
 @end

@@ -6,7 +6,7 @@
 #import "DDHCalculatorDayOne.h"
 
 @implementation DDHCalculatorDayOne
-- (NSArray<NSString *> *)answerFromLines:(NSArray<NSString *> *)lines {
+- (NSArray<NSNumber *> *)answerFromLines:(NSArray<NSString *> *)lines {
     NSMutableArray<NSNumber *> *firstList = [[NSMutableArray alloc] initWithCapacity:lines.count];
     NSMutableArray<NSNumber *> *secondList = [[NSMutableArray alloc] initWithCapacity:lines.count];
 
@@ -34,7 +34,7 @@
     NSInteger sumOne = [self answerOneFromListOne:[firstList copy] listTwo:[secondList copy]];
     NSInteger sumTwo = [self answerTwoFromListOne:[firstList copy] listTwo:[secondList copy]];
 
-    return @[[NSString stringWithFormat:@"%ld", sumOne], [NSString stringWithFormat:@"%ld", sumTwo]];
+    return @[@(sumOne), @(sumTwo)];
 }
 
 - (NSInteger)answerOneFromListOne:(NSArray<NSString *> *)listOne listTwo:(NSArray<NSString *> *)listTwo {
