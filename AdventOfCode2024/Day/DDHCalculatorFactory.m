@@ -25,7 +25,8 @@
             calculator = [[DDHCalculatorDay04 alloc] init];
             break;;
         case 5:
-        case 6: {
+        case 6:
+        case 7: {
             NSString *className = [NSString stringWithFormat:@"DDHCalculatorDay0%ld", dayNumber];
             calculator = [[NSClassFromString(className) alloc] init];
             break;
